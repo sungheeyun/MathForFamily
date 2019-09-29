@@ -1,0 +1,134 @@
+\documentclass{article}
+\input{mydefs}
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+
+\title{Math for Taehoon}
+\author{Sunghee Yun}
+
+\begin{document}
+\maketitle
+
+\section{27-SEP, 2019}
+\begin{itemize}
+\item What is the smallest possible value of $n$ that makes $7! \times n$ a perfect square?
+
+{\bf Answer}: $35$
+
+\begin{proof}
+Since
+\begin{equation}
+7! = 2 \times 3 \times (2 \times 2 ) \times 5 \times (2\times 3) \times 7
+=  2^4 \times 3^2 \times 5 \times 7
+=  (2^2 \times 3)^2 \times 5 \times 7,
+\end{equation}
+we need at least one $5$ and one $7$ to make $7!\times n$ a perfect square.
+Therefore the smallest possible value of $n$ that makes $7! \times n$ a perfect square
+is $5\times 7 = 35$.
+Note that $7! \times 35 = (2^2 \times 3 \times 5 \times 7)^2$.
+
+\end{proof}
+
+\item If there are 18 dragons with either $2$ or $3$ heads,
+and the total number of heads is $42$,
+how many $2$-headed dragons are there? 
+
+{\bf Answer}: $12$
+
+\begin{proof}
+Let $x$ be the number of $2$-headed dragons
+and
+$y$ be the number of $3$-headed dragons.
+Since there are $18$ dragons, we have the following equation:
+\begin{equation}
+\label{eq:dfihj}
+x + y = 18
+\end{equation}
+Also, the total number of heads is $42$, thus we have
+\begin{equation}
+2 \times x + 3 \times y = 42
+\end{equation}
+
+Now if we multiply $3$ to both the left-hand-side (LHS) and right-hand-side (RHS) of (\ref{eq:dfihj}),
+we obtain the following two equations:
+\begin{eqnarray}
+3\times x + 3\times y &=& 3\times(x+y) = 3\times 18
+\label{eq:oges}
+\\
+2 \times x + 3 \times y &=& 42
+\label{eq:uydh}
+\end{eqnarray}
+
+Now we subtract (\ref{eq:uydh}) from (\ref{eq:oges}), we get
+\begin{equation}
+x = (3\times x + 3\times y) - (2 \times x + 3 \times) =  3 \times 18 - 42 = 54 - 42 = 12.
+\end{equation}
+Since we initially assumed that $x$ is the number of $2$-headed dragons,
+the answer is $12$.
+\end{proof}
+
+
+\item Brenda and Sally run in opposite directions on a circular track,
+starting at diametrically opposite points.
+They first meet after Brenda has run $100$ meters.
+They next meet after Sally has run $150$ meters past their first meeting point.
+Each girl runs at a constant speed.
+What is the length of the track in meters?
+
+{\bf Answer}: $350$ meters.
+
+\begin{proof}
+\figurename~\ref{fig:race} shows the track Brenda and Sally run.
+$X$ refers to the distance that Sally runs until she meets Brenda
+and $Y$ refers to the distance that Brenda runs past the first meeting point until she meets Sally again.
+Now since they run at constant speed,
+the ratio of $100$ to $X$ and that of $Y$ to $150$ are the same,
+\ie,
+\begin{equation}
+\label{eq:bysio}
+100 : X = Y : 150
+\Leftrightarrow
+\frac{100}{X} = \frac{Y}{150}
+\Leftrightarrow
+X \times Y = 100 \times 150.
+\end{equation}
+Now we know that the sum of the distance that Brenda runs and the distance that Sally runs until they first meet
+is half the circumference of the track.
+We also know that the sum of the distance that Brenda runs and the distance that Sally runs
+until they meets second time is the circumference of the track.
+If we express this as an equation, we have
+\begin{equation}
+Y + 150 = 2 \times (X + 100).
+\end{equation}
+Now if we multiply $2$ to both side of this equation and use (\ref{eq:bysio}),
+we have
+\begin{eqnarray*}
+&& X \times Y + 150 \times X = 2 \times (X \times X + 100 \times X)
+\\
+&\Leftrightarrow&
+100 \times 150 + 150 \times X = 2 \times (X \times X + 100 \times X)
+\\
+&\Leftrightarrow&
+X\times X + 25 \times X  - 100 \times 75 = 0
+\\
+&\Leftrightarrow&
+(X - 75) \times (X + 100) = 0.
+\end{eqnarray*}
+Therefore $X=75$ and the circumference (or the length) of the track
+is $2\times (X+100) = 350$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.5\linewidth]{figures/sally_and_brenda}
+\caption{Race of Brenda and Sally. B and S stand for Brenda and Sally respectively.}
+\label{fig:race}
+\end{center}
+\end{figure}
+
+\end{proof}
+
+
+\end{itemize}
+
+\end{document}
