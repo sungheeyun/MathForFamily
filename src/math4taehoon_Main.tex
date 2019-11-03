@@ -1,0 +1,445 @@
+\documentclass{article}
+\input{mydefs}
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+%\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+
+\title{Math for Taehoon}
+\author{Sunghee Yun}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{27-SEP-2019}
+\begin{itemize}
+\item What is the smallest possible value of $n$ that makes $7! \times n$ a perfect square?
+
+{\bf Answer}: $35$
+
+\begin{proof}
+Since
+\begin{equation}
+7! = 2 \times 3 \times (2 \times 2 ) \times 5 \times (2\times 3) \times 7
+= 2^4 \times 3^2 \times 5 \times 7
+= (2^2 \times 3)^2 \times 5 \times 7,
+\end{equation}
+we need at least one $5$ and one $7$ to make $7!\times n$ a perfect square.
+Therefore the smallest possible value of $n$ that makes $7! \times n$ a perfect square
+is $5\times 7 = 35$.
+Note that $7! \times 35 = (2^2 \times 3 \times 5 \times 7)^2$.
+
+\end{proof}
+
+\item If there are 18 dragons with either $2$ or $3$ heads,
+and the total number of heads is $42$,
+how many $2$-headed dragons are there? 
+
+{\bf Answer}: $12$
+
+\begin{proof}
+Let $x$ be the number of $2$-headed dragons
+and
+$y$ be the number of $3$-headed dragons.
+Since there are $18$ dragons, we have the following equation:
+\begin{equation}
+\label{eq:dfihj}
+x + y = 18
+\end{equation}
+Also, the total number of heads is $42$, thus we have
+\begin{equation}
+2 \times x + 3 \times y = 42
+\end{equation}
+
+Now if we multiply $3$ to both the left-hand-side (LHS) and right-hand-side (RHS) of (\ref{eq:dfihj}),
+we obtain the following two equations:
+\begin{eqnarray}
+3\times x + 3\times y &=& 3\times(x+y) = 3\times 18
+\label{eq:oges}
+\\
+2 \times x + 3 \times y &=& 42
+\label{eq:uydh}
+\end{eqnarray}
+
+Now we subtract (\ref{eq:uydh}) from (\ref{eq:oges}), we get
+\begin{equation}
+x = (3\times x + 3\times y) - (2 \times x + 3 \times) = 3 \times 18 - 42 = 54 - 42 = 12.
+\end{equation}
+Since we initially assumed that $x$ is the number of $2$-headed dragons,
+the answer is $12$.
+\end{proof}
+
+
+\item Brenda and Sally run in opposite directions on a circular track,
+starting at diametrically opposite points.
+They first meet after Brenda has run $100$ meters.
+They next meet after Sally has run $150$ meters past their first meeting point.
+Each girl runs at a constant speed.
+What is the length of the track in meters?
+
+{\bf Answer}: $350$ meters.
+
+\begin{proof}
+\figurename~\ref{fig:race} shows the track Brenda and Sally run.
+$X$ refers to the distance that Sally runs until she meets Brenda
+and $Y$ refers to the distance that Brenda runs past the first meeting point until she meets Sally again.
+Now since they run at constant speed,
+the ratio of $100$ to $X$ and that of $Y$ to $150$ are the same,
+\ie,
+\begin{equation}
+\label{eq:bysio}
+100 : X = Y : 150
+\Leftrightarrow
+\frac{100}{X} = \frac{Y}{150}
+\Leftrightarrow
+X \times Y = 100 \times 150.
+\end{equation}
+Now we know that the sum of the distance that Brenda runs and the distance that Sally runs until they first meet
+is half the circumference of the track.
+We also know that the sum of the distance that Brenda runs and the distance that Sally runs
+until they meets second time is the circumference of the track.
+If we express this as an equation, we have
+\begin{equation}
+Y + 150 = 2 \times (X + 100).
+\end{equation}
+Now if we multiply $2$ to both side of this equation and use (\ref{eq:bysio}),
+we have
+\begin{eqnarray*}
+&& X \times Y + 150 \times X = 2 \times (X \times X + 100 \times X)
+\\
+&\Leftrightarrow&
+100 \times 150 + 150 \times X = 2 \times (X \times X + 100 \times X)
+\\
+&\Leftrightarrow&
+X\times X + 25 \times X - 100 \times 75 = 0
+\\
+&\Leftrightarrow&
+(X - 75) \times (X + 100) = 0.
+\end{eqnarray*}
+Therefore $X=75$ and the circumference (or the length) of the track
+is $2\times (X+100) = 350$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.5\linewidth]{figures/sally_and_brenda}
+\caption{Race of Brenda and Sally. B and S stand for Brenda and Sally respectively.}
+\label{fig:race}
+\end{center}
+\end{figure}
+
+\end{proof}
+
+\end{itemize}
+
+
+
+\section{02-NOV-2019}
+
+\begin{enumerate}
+
+\item In this addition problme, \ldots\\
+
+\begin{tabular}{cccc}
+&$T$	&$W$	&$O$
+\\
++	&$T$	&$W$	&$O$
+\\
+\hline
+$F$	&$O$	&$U$	&$R$
+\end{tabular}
+
+\begin{solution}
+
+Since $O$ is an even number, the previous addition, \ie, $W+W$ should not generate overflow.
+Therefore, $W$ should be less than $5$.
+Then $O=4$ and $F=1$ since $7+7=14$.
+Since $O=4$, $R=8$.
+Now the above equation becomes\\
+
+\begin{tabular}{cccc}
+&$7$	&$W$	&$4$
+\\
++	&$7$	&$W$	&$4$
+\\
+\hline
+$1$	&$4$	&$U$	&$8$
+\end{tabular}
+
+\ \\
+
+
+
+Now since $O=4$ and $F=1$, the only possible values for $W$ are $2$ and $3$.
+But if $W=2$, then $U=4$ and $U=O$. Therefore $W=3$.
+In summary,\\
+
+\begin{tabular}{cccc}
+&$7$	&$3$	&$4$
+\\
++	&$7$	&$3$	&$4$
+\\
+\hline
+$1$	&$4$	&$6$	&$8$
+\end{tabular}
+
+\end{solution}
+
+\item Mr. Harman needs ...
+
+\begin{description}
+\item[Answer:] $(122+125+127)/2 = 187$.
+\end{description}
+
+\begin{solution}
+Let $X$, $Y$, and $Z$ be the weights of the three boxes. Then we have
+\begin{eqnarray*}
+X + Y &=& 122
+\\
+Y + Z &=& 125
+\\
+X + Z &=& 127
+\end{eqnarray*}
+
+Since the sum of all three quantities in left-hand-side (LHS)
+is the same as the sum of all three quantities in right-hand-side (RHS),
+we have
+\begin{equation}
+2 \times ( X + Y + Z ) = 122+125+127,
+\end{equation}
+thus
+\begin{equation}
+X + Y + Z = (122+125+127)/2 = 187.
+\end{equation}
+
+\end{solution}
+
+
+\item The students in Mrs. Reed's English class are reading \ldots
+
+\begin{description}
+\item[Answer:] $760 \times \frac{1.5}{1 + 1.5} = 760 \times \frac{3}{5}= 456.$
+\end{description}
+
+\begin{solution}
+Note that Chandra's reading speed is $1.5$ times bigger than that of Bob.
+If we let $x$ be the number of pages that Bob should read,
+then $1.5 \times x$ is the number of pages that Chandra should read.
+Thus we have $x + 1.5 \times x = 2.5 \times x = 760$ and
+\begin{equation}
+x = \frac{760}{2.5} = 760 \times \frac{2}{5}.
+\end{equation}
+Thus the number of pages Chandra should read is
+\begin{equation}
+x \times 1.5 = 760 \times \frac{\cancel{2}}{5} \times \frac{3}{\cancel{2}}
+= 152 \times 3 = 456.
+\end{equation}
+\end{solution}
+
+
+\item Landy drove \ldots\\
+
+\begin{description}
+\item[Answer:]
+\begin{equation}
+\frac{10+20+30}{10/30 + 20/20 + 30/10} = 13.8 \mbox{ miles/hour}
+\end{equation}
+\end{description}
+
+
+\item The Incredible \ldots\\
+
+\begin{description}
+\item[Answer:] The $11$th jump!
+\end{description}
+
+\begin{solution}
+\begin{eqnarray*}
+1\mbox{st jump} &=& 1
+\\
+2\mbox{nd jump} &=& 2
+\\
+3\mbox{rd jump} &=& 4
+\\
+4\mbox{th jump} &=& 8
+\\
+5\mbox{th jump} &=& 16
+\\
+6\mbox{th jump} &=& 32
+\\
+7\mbox{th jump} &=& 64
+\\
+8\mbox{th jump} &=& 128
+\\
+9\mbox{th jump} &=& 256
+\\
+10\mbox{th jump} &=& 512
+\\
+11\mbox{th jump} &=& 1024
+\end{eqnarray*}
+\end{solution}
+
+
+\item The Amaco \ldots\\
+
+\begin{description}
+\item[Answer:] $15 - 11 = 4$
+\end{description}
+
+\begin{solution}
+Let $X$ and $Y$ be the number of seventh graders and that of sixth graders
+respectively who bought pencils.
+Let $P$ be the price of one pencil in cents.
+Then we have
+\begin{eqnarray*}
+X \times P &=& 143 = 11 \times 13
+\\
+Y \times P &=& 195 = 15 \times 13
+\end{eqnarray*}
+Thus $P$ is a common divisor of $143$ and $195$.
+Thus $P$ is $1$ or $13$. However, if $P=1$, then $Y=195$. But $Y\leq 30$, hence $P=13$.
+Therefore, $X=11$ and $Y=15$.
+Thus $Y-X = 4$.
+\end{solution}
+
+\end{enumerate}
+
+\begin{description}
+
+\item[Q1] $88+86+91+92+87+90+89+93+92+88$?
+
+\begin{description}
+\item[Answer:] 
+\begin{eqnarray*}
+\lefteqn{
+88+86+91+92+87+90+89+93+92+88}
+\\
+&=&
+(90 - 2)
++ (90 - 4)
++ (90 + 1)
++ (90 + 2)
++ (90 - 3)
+\\
+&&
++ (90 + 0)
++ (90 - 1)
++ (90 + 3)
++ (90 + 2)
++ (90 - 2)
+\\
+&=&
+90 \times 10
++(- 2 - 4 + 1 + 2 - 3 + 0 - 1 + 3 + 2 - 2)
+\\
+&=&
+90 \times 10 - 6 = 894.
+\end{eqnarray*}
+\end{description}
+
+
+\item[Q2]
+\begin{description}
+\item[Answer:] $90$ inches.
+\end{description}
+
+
+\item[Q3]
+\begin{description}
+\item[Answer:] $4$.
+\end{description}
+
+
+\item[Q4]
+\begin{description}
+\item[Answer:] $3 \times 8 \times 2 = 48$.
+\end{description}
+
+
+\item[Q5]
+\begin{description}
+\item[Answer:] $1249$
+\end{description}
+
+
+\item[Q6]
+\begin{description}
+\item[Answer:] $56.25$
+\begin{equation}
+x \times \frac{4}{5} \times \frac{4}{5} = 36
+\Rightarrow x = 36 \times \frac{5}{4} \times \frac{5}{4} = 56.25
+\end{equation}
+\end{description}
+
+
+\item[Q7]
+\begin{description}
+\item[Answer:] $2 \times 2 / 2 = 2$
+\end{description}
+
+
+\item[Q8]
+\begin{description}
+\item[Answer:] Captain Hook found $30$ diamonds.
+\begin{eqnarray*}
+H + P &=& 80
+\\
+P + S &=& 70
+\\
+H + S &=& 50
+\end{eqnarray*}
+thus
+\[
+2 \times H = (H+P) + (H+S) - (P+S) = 80+50-70 = 60
+\Rightarrow = H = 30.
+\]
+\end{description}
+
+
+\item[Q9]
+\begin{description}
+\item[Answer:] $15 + 10 \times 2 = 35$.
+\end{description}
+
+
+\item[Q10]
+\begin{description}
+\item[Answer:] $25$ hours.
+
+Since the 1st pipe can fill the swimming pool $1.5$ times faster than the 2nd pipe,
+using both pipes will be $2.5$ $(=1 + 1.5)$ times fater than using the 2nd pipe alone.
+Thus using only 2nd pipe will be $2.5$ slower than using both pipes, hence it'd take $10 \times 2.5 = 25$ hours to fill the swimming pool.
+\end{description}
+
+
+\item[Q11]
+\begin{description}
+\item[Answer:] $12 \times 12 - 4 \times 4 - 4 \times (4\times 4)/2 = 96$.
+\end{description}
+
+
+\item[Q12]
+\begin{description}
+\item[Answer:] $(30+90+50)/(1+2+1) = 42.5$ miles/hour.
+\end{description}
+
+
+\item[Q13]
+\begin{description}
+\item[Answer:] $4$ months
+\[
+1\ \cancel{2}\ \cancel{3}\ \cancel{4}\ 5\ \cancel{6}\ 7\ \cancel{8}\ \cancel{9}\ \cancel{10}\ 11\ \cancel{12}
+\]
+\end{description}
+
+
+\end{description}
+
+
+
+
+\end{document}
