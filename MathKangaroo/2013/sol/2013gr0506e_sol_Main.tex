@@ -3,7 +3,7 @@
 \input{../../../../FrequentlyUsed/latex/mydefs}
 \input{../../../../FrequentlyUsed/latex/mypackages}
 
-\title{Math Kangaroo: Grade 5-6, 2013}
+\title{Math Kangaroo Solutions: Grade 5-6, 2013}
 
 \author{Sunghee Yun}
 
@@ -67,7 +67,50 @@ B&B&B&B
 
 \item (A)
 \item (B)
-\item (E)
+\item (D)
+\begin{solution}
+The three digits numbers which satisfy the property have one of these forms:
+\[
+9\boxvoid 6,
+\ 8\boxvoid 5,
+\ 7\boxvoid 4,
+\ 6\boxvoid 3,
+\ 5\boxvoid 2,
+\ 4\boxvoid 1
+\]
+There are $10$ digits for each of these forms,
+hence there are $60$ $3$ digit numbers
+(which satisfy the given property).
+
+Another way to see this is, if we let $abc$ a three digit number,
+the property holds for that number if and only if
+\[
+100 \times a
++ 10 \times b
++ 1 \times c
+-297
+=
+1 \times a
++ 10 \times b
++ 100 \times c
+\Leftrightarrow
+99 \times (a-c) = 297
+\Leftrightarrow
+a-c = 3.
+\]
+Therefore the possible tuples for $(a,b,c)$ are
+\[
+(4, b, 1),
+\ (5, b, 2),
+\ (6, b, 3),
+\ (7, b, 4),
+\ (8, b, 5),
+\ (9, b, 6),
+\]
+which is basically a strict mathematical proof for the first argument.
+
+\end{solution}
+
 \item (B)
 
 \item (E)
