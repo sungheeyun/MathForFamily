@@ -1,0 +1,91 @@
+\documentclass{article}
+\input{../../FrequentlyUsed/latex/mypackages}
+\input{../../FrequentlyUsed/latex/mydefs}
+
+
+\title{Math Solution for Hyunjin}
+\author{Sunghee Yun}
+
+\begin{document}
+\maketitle
+
+Let $x$ and $y$ be the amount of job Nikki and Kelly can write for one hour respectively.
+In other words, assume that $x$ and $y$ are the rates of Nikki and Kelly respectively.
+If Nikki work alone, it will take $1/x$ to do the job, and if Kelly work alone, it will take $1/y$.
+Thus, we have 
+\begin{equation}
+1/x = 1/y - 4
+\mbox{ and }
+1/(x+y) = 20,
+\end{equation}
+which are equivalent to 
+\begin{equation}
+4xy + y - x = 0
+\mbox{ and }
+20(x+y) = 1.
+\end{equation}
+Since $y= 1/20 -x$, we plug this in the first equation to obtain
+\iffalse
+\begin{equation}
+(4x+1)(1/20 -x ) - x = 0 \Leftrightarrow 4x^2 +(-1/5 +1 + 1 ) x - 1/20 = 0 \Leftrightarrow 80 x^2 + 36 x - 1 = 0.
+\end{equation}
+\fi
+\begin{equation}
+(4x+1)(1/20 -x ) - x = 0 \Leftrightarrow (4x+1)(20x -1 ) +20x = 0 \Leftrightarrow 80x^2 + 36x -1 = 0.
+\end{equation}
+The computer calculation yields (\eg, using {\tt numpy.roots} with Python)
+\begin{equation}
+x = -0.47624689 \mbox{ or } 0.02624689.
+\end{equation}
+Since $x$ is a positive real number,
+\begin{equation}
+x = 0.02624689 \mbox{ and } y = 1/20 - x = 0.0237531094,
+\end{equation}
+and it'd take Nikki and Kelly 
+\begin{equation}
+1/x = 38.0998 \mbox{ hours}
+\end{equation}
+and
+\begin{equation}
+1/y = 42.0998 \mbox{ hours}
+\end{equation}
+respectively (to do the job).
+
+Now let us do the calculation using the quadratic formula.
+The roots of $80x^2 + 36x - 1=0$ are
+\begin{equation}
+x = \frac{-18 \pm \sqrt{18^2 + 80}}{80}
+= \frac{-9 \pm \sqrt{9^2 + 20}}{40}
+= \frac{-9 \pm \sqrt{101}}{40}
+\end{equation}
+Thus if we take the positive number, we have
+\begin{equation}
+x = \frac{-9+\sqrt{101}}{40} \mbox{ and }
+y = 1/20 - x = 
+\frac{11-\sqrt{101}}{40},
+\end{equation}
+and it'd take Nikki and Kelly 
+\begin{equation}
+1/x = \frac{40}{-9+\sqrt{101}}
+= \frac{40}{-9+\sqrt{101}} \cdot
+\frac{9+\sqrt{101}}{9+\sqrt{101}}
+= 2\cdot (9+\sqrt{101})
+\mbox{ hours}
+\end{equation}
+and
+\begin{equation}
+1/y = \frac{40}{11-\sqrt{101}}
+= \frac{40}{11-\sqrt{101}}
+\cdot \frac{11+\sqrt{101}}{11+\sqrt{101}}
+= 2\cdot(11+\sqrt{101})
+\mbox{ hours}
+\end{equation}
+respectively.
+
+
+
+
+
+
+
+\end{document}
