@@ -1,0 +1,137 @@
+\documentclass{article}
+
+\input{../../FrequentlyUsed/latex/mydefs}
+\input{../../FrequentlyUsed/latex/mypackages}
+
+\title{Yun Family Math Problems}
+\author{Sunghee Yun}
+
+
+\begin{document}
+\maketitle
+
+\section{Jisun's pizze problem (21-MAR-2020)}
+
+While we were chatting over \href{https://zoom.us/}{Zoom} on 21-MAR-2020,
+Jisun brought up the below problem:
+\begin{quote}
+Suppose that you have a round pizza and an analog watch or clock.
+How can you divide it into 11 (exactly) equal pieces?
+\end{quote}
+Though this problem looked really interesting,
+I myself could not figure it out.
+Taehoon said you can erase the digit $12$,
+which was a very creative idea.
+However, nobody could give the correct question to it.
+
+On 23-MAR-2020, Jisun asked again, ``Has anybody solved the pizza problem?'' over KakaoTalk.
+I googled it and found the following answer.
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{figures/pizze_cut_prob_answer_by_googling}
+\end{center}
+
+And Jisun confirmed that that is the right answer.
+
+Then my tendency to want to prove things rigorously
+made me have to spend my time on writing the below.
+However, I'm pretty sure that this will be helpful for my nephews (and niece),
+so this would definitely not waste of time. :) 
+
+
+Here I want to write two different ways to see this, the first of which is kind of repeat what is written above.
+
+\begin{proof}
+\begin{enumerate}
+\item
+One way to prove this can go as follows.
+
+If you position the hour hand (HH) and the minute hand (MH) at noon
+and let the watch operator as it usually does,
+then the two hands do not meet until 1PM (the left clock in \figurename~\ref{fig:1})
+because the MH goes faster than the HH.
+Now if the time passes a bit more,
+there comes a moment that the two hands meets exactly (the right clock in \figurename~\ref{fig:1}).
+Now mark this position (or angle) on the pizza.
+Then wait until the two hands meet again and mark that position, too.
+You repeat this until the two meets again at midnight.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.7\linewidth]{figures/pizza_HH_MH}
+\end{center}
+\caption{The locations of hour and minute hands at 1PM (left) and those when it meets the next time (right).}
+\label{fig:1}
+\end{figure}
+
+Now ask how many times the two hands have met after noon, \ie,
+exclude noon.
+Since they met a bit after 1PM, then a more bit after 2PM, \ldots,
+and after 11PM. When they met after 11PM is at midnight.
+Thus, \emph{they have met 11 times}.
+
+Because you can insist that the time between two consecutive \emph{rendezvious} of the two hands is the same for every time,
+this divides $360$ degrees into 11 equal angles.
+
+
+\item
+Now let us examine this quantitatively.
+Let $x$ be the angle between HH at midnight and HH when it meets MH next time as shown in \figurename~\ref{fig:2}.
+Because HH goes to the position of $1$
+when MH does one rotation,
+\ie, the speed of MH is $12$ times faster then HH,
+the angle $y$ in \figurename~\ref{fig:2} is $12$ times smaller than $x$,
+or equivalently, $x$ is $12$ times larger than $y$.
+Then we have
+\begin{equation}
+\label{eq:1}
+x = 12 \times y.
+\end{equation}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.4\linewidth]{figures/pizza_HH_MH_angles}
+\end{center}
+\caption{Pizza problem: $x$ refers to the angle between $12$ o'clock and where the minute hand meets the hour hand,
+and $y$ refers to the angle between $1$ o'clock and where the minute hand meets the hour hand.}
+\label{fig:2}
+\end{figure}
+
+Now we have two variables, $x$ and $y$, but only one equation. In this case, (in general) we cannot decide
+unique values for the variables.
+However, we have one more equation
+since $x$ is equal to $y$ plus $360/12$.
+Therefore we have
+\begin{equation}
+\label{eq:2}
+x = y + \frac{360}{12}
+\Leftrightarrow
+12 \times x = 12 \times y + 360
+\end{equation}
+We obtained the right side equality
+by multiplying $12$ on both sides of the left equality in (\ref{eq:2}).
+Now if you replace $12\times y$ with $x$ in (\ref{eq:1}),
+we obtain
+\begin{equation}
+12 \times x = x + 360
+\Leftrightarrow
+11 \times x = 360
+\Leftrightarrow
+x = 360/11.
+\end{equation}
+Therefore our method \emph{indeed} divides the pizza into $11$ equal-sized pieces.
+\qed
+
+An interesting observation is that this number $11$ comes from the calculation of $12 - 1$.
+Thus, if half day were $13$ hours, the technique would give us $12$ pizza pieces,
+and, \eg, if half day were $18$ hours, the technique would give us $17$ pizza pieces.
+In general, if half day were $n$ hours, the technique would give us $n-1$ pizze pieces!
+This type of generalization is a good practice to improve your math skills (\emph{I} believe).
+
+\end{enumerate}
+
+\end{proof}
+
+
+
+\end{document}
