@@ -244,3 +244,5 @@ TSWLatexianTemp*
 .DS_Store
 
 Video/
+.idea/
+python/bin/math_is_fun.png
